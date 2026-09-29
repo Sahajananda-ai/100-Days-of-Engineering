@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Day 2 Network</title></head>
+<body>
+    <h1>Network Inspector</h1>
+    <button id="fetchBtn">Fetch User Data</button>
+    <p id="result"></p>
+
+    <script>
+        // This tells the browser: "When the button is clicked, fetch data from the API"
+        document.getElementById('fetchBtn').addEventListener('click', () => {
+            fetch('https://jsonplaceholder.typicode.com/users/1')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = "Name: " + data.name + ", Email: " + data.email;
+                });
+        });
+    </script>
+</body>
+</html>
